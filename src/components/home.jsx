@@ -89,6 +89,7 @@ const Home = () => {
             <img
               key={i}
               src={item.img}
+              alt={item.title}
               className={`${styles.headset} ${styles[position]}`}
             />
           )
