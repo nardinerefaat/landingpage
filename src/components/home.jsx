@@ -54,7 +54,7 @@ const Home = () => {
     // This prevents memory leaks.
     return ()=> clearInterval(timer)
 
-  },[])
+  },[headset.length])
 
   return (
     <div 
