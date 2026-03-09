@@ -1,0 +1,53 @@
+.mainContainer{
+    margin: 0;
+    padding-bottom: 20px;
+    h1{
+        padding: 100px  100px 0px 100px;
+    }
+    .container{
+    
+        padding: 20px;
+        text-align: center;
+        background: linear-gradient(135deg,#5b66d6,#8a92ff , #d1d4ff);
+        margin: 20px 80px;
+        border-radius: 10px;
+        color: #fdfdfd;
+        
+        h3{
+            margin-bottom: 20px;
+            font-family: Audiowide;
+        }
+        .items{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .items>div{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            gap:5px;
+            align-items: center;
+        }
+        .icon{
+            font-size: 35px;
+            color: #3d4aa8;
+           
+    
+        }
+        h4::after{
+    
+            content:"";
+            display:block;
+            width:60px;
+            height:4px;
+            background: #5b65d6c9;
+            margin:10px auto;
+            border-radius:5px;
+        }
+    }
+    
+     
+}
+

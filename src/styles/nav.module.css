@@ -1,0 +1,123 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-family: Audiowide;
+  position: relative;
+}
+.logo h4 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-left: 40px;
+}
+.logo .kingLogo {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 35px;
+  position: absolute;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.links a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  padding-top: 0;
+}
+.links a:hover {
+  color: #3d4aa8;
+}
+
+button {
+  background-color: #3d4aa8;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  font-family: Quicksand;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #4755c2;
+}
+
+.menuIcon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.darkModeIcon {
+  font-size: 25px !important;
+  cursor: pointer;
+  margin-left: 170px;
+}
+
+.light {
+  color: #1b1b1b;
+}
+
+.dark {
+  color: rgba(255, 255, 255, 0.712);
+}
+
+@media (max-width: 1024px) {
+  .links {
+    display: none;
+  }
+  .buttons {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+}
+.mobileMenu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.mobileMenu a:hover {
+  color: #3d4aa8;
+}
+
+.darkMode .links a {
+  color: white !important;
+}
+.darkMode .links a:hover {
+  transform: scale(1.08);
+}/*# sourceMappingURL=nav.module.css.map */

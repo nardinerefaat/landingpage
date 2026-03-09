@@ -1,0 +1,265 @@
+.feature{
+    padding: 100px  100px 0px 100px;
+    
+    .head{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;    
+        justify-content: space-between;
+        gap: 20px;
+
+        button{
+            cursor: pointer;
+            position: static;
+            right: 0;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg,#5b66d6,#8a92ff);;
+            color: white;
+            font-weight: bold;
+            
+            padding: 10px 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.288);
+            transition: all 0.3s ease;
+
+            &:hover{
+              background-color: rgb(231, 231, 231);
+              box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.432);
+              color: #3d4aa8;
+            }
+        }
+       
+    }
+    .container{      
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 30px;
+        justify-content: center;
+        transition: all 0.4s ease;
+        z-index: 0;
+        align-items: stretch;
+        
+        .item{
+          z-index: 1;
+          background-color: rgb(248, 248, 248);
+          border-radius: 10px;
+          width: calc(33.33% - 20px);
+          padding: 0px 20px 20px 20px;
+          position: relative;
+          min-height: 280px; // taller when description opens
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+          transition: all .3s ease;
+          animation: fadeIn 0.5s ease forwards;
+          opacity: 0;
+          overflow:hidden;
+          // transform: translateY(30px);
+          // animation: fadeIn 0.5s ease forwards;
+          align-items: stretch;
+          &:hover{
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            // transform:translateY(-10px);
+            z-index: 20;
+            transform: scale(1.01) !important;
+            }
+            &:hover img{
+              transform: scale(1.08);
+              }
+            h4{
+              // margin-bottom: 5px;
+              color: #2a3374;
+              padding: 0;
+            }
+            button{
+                position: relative;
+                margin-top: 10px;
+                border: none;
+                border-radius: 10px;
+                background: linear-gradient(135deg,#3d4aa8,#6b75ff);
+                color: white;
+                width: fit-content;
+                padding: 5px 20px ;
+                transition: all .5s ease;
+                cursor: pointer;
+                &:hover{
+                    background: linear-gradient(135deg,#5b66d6,#8a92ff);
+                    color: #3d4aa8;
+                    font-weight: bold;
+                  }
+                  
+                }
+            .active{
+              background: linear-gradient(135deg,#5b66d6,#8a92ff);
+              color: #3d4aa8;
+              font-weight: bold;
+            }
+            span{
+              color: #3d4aa8;
+              padding: 0;
+              font-size:20px;
+              font-weight:bold;
+              
+              }
+              img{
+                margin: auto;
+                display: block;
+                width: 70%;
+                transition: all .5s ease;
+              }
+              p{
+                color: #3d4aa8;
+              }
+              .description{
+                color: #3d4aa8 ;
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 10px;
+                position: relative;
+                z-index: 100;
+                margin-top: 10px;
+                margin: 5px;
+                // overflow:visible;
+                animation:descFade .3s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.527);
+
+            }
+        }
+        
+        .showAll{
+          animation: fadeIn 0.6s ease forwards;
+        }
+
+        .showLess{
+          animation: fadeOut .4s ease forwards;
+         
+        }
+      }
+      .container>div{
+        // display: flex;
+        // gap: 10px;
+        flex-direction: column;
+      }
+}
+
+.btns{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.categoryBtn{
+  border-radius:20px;
+  padding:8px 18px;
+  background:#eee;
+  color: #3d4aa8;
+  margin-bottom: 10px;
+  border:none;
+  &:hover{
+    background: linear-gradient(135deg,#5b66d6,#8a92ff);
+    color:white;
+  }
+
+}
+.activeBtn{
+  background: linear-gradient(135deg,#5b66d6,#8a92ff);
+  color: #3d4aa8;
+  font-weight: bold;
+}
+
+.darkMode{
+  background-color: #1b172d !important;
+  h4,p,span{
+    color: #eee !important;
+  }
+  .description{
+    background-color: #6b75ff !important;
+    color: white !important;
+  }
+}
+
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeOut{
+  from{
+    opacity:1;
+    transform:translateY(0);
+  }
+  to{
+    opacity:0;
+    transform:translateY(25px);
+  }
+}
+
+@keyframes descFade{
+  from{
+    opacity:0;
+    transform:scale(.95);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+
+/* TABLET */
+@media (max-width: 900px){
+
+  .feature .container .item{
+    width: calc(50% - 20px);
+  }
+
+  .navbar{
+    padding: 20px;
+  }
+
+  .hero{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+}
+
+/* MOBILE */
+@media (max-width: 500px){
+
+  .feature .container .item{
+    width: 100%;
+    text-align: center;
+    // display: flex;
+    
+  }
+  .feature{
+    .head{
+      flex-direction:column;
+      align-items:flex-start;
+      button{
+        width: 100%;
+      }
+    }
+
+  }
+  .btns{
+    justify-content: center;
+  }
+  
+  h1{
+    
+    font-size: 28px;
+  }
+
+}

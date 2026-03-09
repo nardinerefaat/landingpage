@@ -1,0 +1,64 @@
+{
+  "productsMobile": [
+    {
+      "id": 1,
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 549,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://dummyjson.com",
+      "images": ["/images/phone1.png"],
+      "specifications": {
+          "display": "5.5-inch Full HD Super AMOLED",
+          "processor": "A12 Bionic chip",
+          "memory": "64GB or 256GB"
+        }
+    },
+    {
+        "id": 2,
+        "title": "Samsung Universe 9",
+        "description": "Samsung's new variant which goes beyond the Universe",
+        "price": 899,
+        "brand": "Samsung",
+        "category": "smartphones",
+        "thumbnail": "https://dummyjson.com",
+        "images": ["/images/phone1.png"],
+        "specifications": {
+        "display": "6.2-inch Quad HD+ Super AMOLED",
+        "processor": "Qualcomm Snapdragon 855",
+        "memory": "128GB or 512GB"
+      }
+    },
+    {
+        "id": 3,
+        "title": "Samsung Universe 9",
+        "description": "Samsung's new variant which goes beyond the Universe",
+        "price": 899,
+        "brand": "Samsung",
+        "category": "smartphones",
+        "thumbnail": "https://dummyjson.com",
+        "images": ["/images/phone1.png"],
+       "specifications": {
+        "display": "6.2-inch Quad HD+ Super AMOLED",
+        "processor": "Qualcomm Snapdragon 855",
+        "memory": "128GB or 512GB"
+      }
+    },
+    {
+        "id": 4,
+        "title": "Samsung Universe 9",
+        "description": "Samsung's new variant which goes beyond the Universe",
+        "price": 899,
+        "brand": "Samsung",
+        "category": "smartphones",
+        "thumbnail": "https://dummyjson.com",
+        "images":["/images/phone1.png"],
+       "specifications": {
+        "display": "6.2-inch Quad HD+ Super AMOLED",
+        "processor": "Qualcomm Snapdragon 855",
+        "memory": "128GB or 512GB"
+      }
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+.home {
+  min-height: 100vh;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+.home button {
+  font-family: Quicksand !important;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  color: rgb(248, 248, 248);
+  font-weight: bold;
+}
+.home button:hover {
+  color: rgb(100, 100, 100) !important;
+  background-color: white !important;
+}
+.home .headset {
+  position: absolute;
+  transition: all 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.home .text {
+  width: 40%;
+  position: absolute;
+  padding-left: 50px;
+  margin: auto;
+  font-family: Audiowide;
+}
+.home .slider {
+  width: 500px;
+  height: 500px;
+}
+.home .active {
+  right: 0;
+  top: 120px;
+  width: 300px;
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1);
+  z-index: 3;
+  margin-right: 80px;
+  position: absolute;
+}
+.home {
+  /* SMALL PREVIEW TOP RIGHT */
+}
+.home .preview {
+  right: 20px;
+  top: 0;
+  width: 140px;
+  filter: blur(4px);
+  opacity: 0.6;
+  transform: scale(0.6);
+  z-index: 2;
+}
+.home {
+  /* ENTERING FROM RIGHT */
+}
+.home .hidden {
+  right: -200px;
+  top: 200px;
+  width: 250px;
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+@media (max-width: 620px) {
+  .home .active {
+    width: 180px;
+    justify-content: center;
+  }
+  .home .text {
+    width: 40%;
+    position: absolute;
+    padding-left: 10px;
+    font-size: smaller;
+  }
+}/*# sourceMappingURL=home.module.css.map */

@@ -1,0 +1,118 @@
+{
+  "storage": [
+    {
+      "id": "STO-101",
+      "title": "HyperDrive X1 2TB NVMe SSD",
+      "name": "HyperDrive X1",
+      "brand": "HyperTech",
+      "type": "Internal SSD",
+      "description": "Ultra-fast 2TB NVMe SSD designed for gaming PCs and high-performance workstations with exceptional read and write speeds.",
+      "images": [
+        "https://images.unsplash.com/photo-1601737487795-dab272f52420",
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704"
+      ],
+      "capacity": "2TB",
+      "interface": "NVMe PCIe 4.0",
+      "read_speed": "7200 MB/s",
+      "write_speed": "6400 MB/s",
+      "form_factor": "M.2 2280",
+      "price": 219.99,
+      "in_stock": true,
+      "rating": 4.9
+    },
+    {
+      "id": "STO-102",
+      "title": "IronVault 6TB Desktop HDD",
+      "name": "IronVault 6TB",
+      "brand": "IronData",
+      "type": "Internal HDD",
+      "description": "Large capacity 6TB hard drive perfect for desktop storage, backups, and media libraries.",
+      "images": [
+        "https://images.unsplash.com/photo-1531492746076-161ca9bcad58",
+        "https://images.unsplash.com/photo-1591799265444-d66432b91588"
+      ],
+      "capacity": "6TB",
+      "interface": "SATA III",
+      "rpm": 7200,
+      "cache": "256MB",
+      "price": 159.99,
+      "in_stock": true,
+      "rating": 4.5
+    },
+    {
+      "id": "STO-103",
+      "title": "PocketFlash USB-C 256GB Drive",
+      "name": "PocketFlash 256GB",
+      "brand": "FlashCore",
+      "type": "USB Flash Drive",
+      "description": "High-speed USB-C flash drive designed for fast file transfers between laptops, tablets, and smartphones.",
+      "images": [
+        "https://images.unsplash.com/photo-1580894894513-541e068a3e2b",
+        "https://images.unsplash.com/photo-1617897711385-df9d3b1d6c4d"
+      ],
+      "capacity": "256GB",
+      "interface": "USB-C 3.2",
+      "compatibility": ["Windows", "MacOS", "Linux", "Android"],
+      "price": 39.99,
+      "in_stock": true,
+      "rating": 4.4
+    },
+    {
+      "id": "STO-104",
+      "title": "TravelVault 1TB Portable SSD",
+      "name": "TravelVault 1TB",
+      "brand": "PortaTech",
+      "type": "External SSD",
+      "description": "Compact and durable portable SSD offering high-speed storage for photographers, videographers, and travelers.",
+      "images": [
+        "https://images.unsplash.com/photo-1625842268584-8f3296236761",
+        "https://images.unsplash.com/photo-1625842268574-1b9b7f5d7a05"
+      ],
+      "capacity": "1TB",
+      "interface": "USB-C",
+      "read_speed": "1050 MB/s",
+      "write_speed": "1000 MB/s",
+      "price": 139.99,
+      "in_stock": true,
+      "rating": 4.7
+    },
+    {
+      "id": "STO-105",
+      "title": "ProShot 512GB SDXC Memory Card",
+      "name": "ProShot 512GB",
+      "brand": "CaptureTech",
+      "type": "Memory Card",
+      "description": "Professional SDXC card optimized for 4K video recording and high-resolution photography.",
+      "images": [
+        "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae",
+        "https://images.unsplash.com/photo-1602526216439-6c9b8a4c5a90"
+      ],
+      "capacity": "512GB",
+      "speed_class": "UHS-II U3",
+      "read_speed": "300 MB/s",
+      "write_speed": "260 MB/s",
+      "price": 119.99,
+      "in_stock": true,
+      "rating": 4.8
+    },
+    {
+      "id": "STO-106",
+      "title": "NanoStore 256GB MicroSD Card",
+      "name": "NanoStore 256GB",
+      "brand": "NanoByte",
+      "type": "MicroSD Card",
+      "description": "High-capacity microSD card designed for smartphones, drones, action cameras, and portable gaming devices.",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7",
+        "https://images.unsplash.com/photo-1601737487795-dab272f52420"
+      ],
+      "capacity": "256GB",
+      "speed_class": "UHS-I U3",
+      "read_speed": "160 MB/s",
+      "write_speed": "120 MB/s",
+      "price": 49.99,
+      "in_stock": true,
+      "rating": 4.6
+    }
+  ]
+}

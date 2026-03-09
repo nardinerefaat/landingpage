@@ -1,0 +1,124 @@
+{
+  "audioandvisuals": [
+    {
+      "id": "AUD-001",
+      "title": "EchoSound X100 Bluetooth Speaker",
+      "name": "EchoSound X100",
+      "category": "audio",
+      "type": "Bluetooth Speaker",
+      "brand": "SoundMax",
+      "description": "A compact portable Bluetooth speaker designed for everyday listening. It delivers clear sound with deep bass and supports wireless streaming from phones, tablets, and laptops.",
+      "images": [
+        "/images/bluetoothspeaker.png",
+        "https://images.unsplash.com/photo-1545454675-3531b543be5d",
+        "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd"
+      ],
+      "connectivity": ["Bluetooth 5.2", "AUX"],
+      "power_output_watts": 20,
+      "battery_life_hours": 12,
+      "price": 59.99,
+      "in_stock": true,
+      "rating": 4.4
+    },
+    {
+      "id": "AUD-002",
+      "title": "StudioBeat Pro Noise Cancelling Headphones",
+      "name": "StudioBeat Pro",
+      "category": "audio",
+      "type": "Headphones",
+      "brand": "WaveLab",
+      "description": "Premium over-ear headphones with active noise cancellation and long battery life. Designed for immersive music listening, commuting, and professional audio monitoring.",
+      "images": [
+        "/images/headphone.png",
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944"
+      ],
+      "connectivity": ["Bluetooth 5.0", "Wired 3.5mm"],
+      "noise_cancelling": true,
+      "battery_life_hours": 30,
+      "price": 149.99,
+      "in_stock": true,
+      "rating": 4.7
+    },
+    {
+      "id": "AUD-003",
+      "title": "MicCast M20 USB Condenser Microphone",
+      "name": "MicCast M20",
+      "category": "audio",
+      "type": "Microphone",
+      "brand": "VoicePro",
+      "description": "USB condenser microphone ideal for podcasting, streaming, and voice recording. Provides clear vocal capture with a wide frequency response and simple plug-and-play setup.",
+      "images": [
+        "/images/microphone.png",
+        "https://images.unsplash.com/photo-1590608897129-79da98d15969",
+        "https://images.unsplash.com/photo-1589903308904-1010c2294adc"
+      ],
+      "connectivity": ["USB-C"],
+      "frequency_response": "20Hz-20kHz",
+      "price": 79.99,
+      "in_stock": false,
+      "rating": 4.3
+    },
+    {
+      "id": "VIS-001",
+      "title": "VisionView 27-inch QHD Gaming Monitor",
+      "name": "VisionView 27",
+      "category": "visual",
+      "type": "Monitor",
+      "brand": "DisplayTech",
+      "description": "A 27-inch high-resolution monitor built for productivity and gaming. It features a fast refresh rate, sharp QHD resolution, and multiple connectivity ports.",
+      "images": [
+        "/images/screen.png",
+        "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931",
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+      ],
+      "screen_size_inches": 27,
+      "resolution": "2560x1440",
+      "refresh_rate_hz": 144,
+      "ports": ["HDMI", "DisplayPort", "USB-C"],
+      "price": 329.99,
+      "in_stock": true,
+      "rating": 4.6
+    },
+    {
+      "id": "VIS-002",
+      "title": "CinemaBeam P500 Full HD Home Projector",
+      "name": "CinemaBeam P500",
+      "category": "visual",
+      "type": "Projector",
+      "brand": "BeamX",
+      "description": "Full HD home entertainment projector delivering bright and vibrant visuals. Suitable for movies, presentations, and gaming with wireless and HDMI connectivity.",
+      "images": [
+        "/images/projector.png",
+        "https://images.unsplash.com/photo-1593784991095-a205069470b6",
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf"
+      ],
+      "resolution": "1920x1080",
+      "brightness_lumens": 3500,
+      "connectivity": ["HDMI", "WiFi", "Bluetooth"],
+      "price": 499.99,
+      "in_stock": true,
+      "rating": 4.5
+    },
+    {
+      "id": "VIS-003",
+      "title": "StreamCam Ultra 4K Webcam",
+      "name": "StreamCam Ultra",
+      "category": "visual",
+      "type": "Webcam",
+      "brand": "CamPro",
+      "description": "High-quality 4K webcam designed for video conferencing, streaming, and content creation. Offers smooth 60fps recording and simple USB-C connectivity.",
+      "images": [
+        "/images/webcam.png",
+        "https://images.unsplash.com/photo-1593640408182-31c70c8268f5",
+        "https://images.unsplash.com/photo-1587614382346-acd977736f90"
+      ],
+      "resolution": "4K",
+      "frame_rate_fps": 60,
+      "connectivity": ["USB-C"],
+      "price": 119.99,
+      "in_stock": true,
+      "rating": 4.2
+    }
+  ]
+}

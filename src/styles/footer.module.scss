@@ -1,0 +1,42 @@
+.mainContainer{
+    padding: 30px 1px;
+
+    
+    h1{
+        padding: 10px  100px 0px 100px;
+    }
+    .container{
+        padding: 10px 50px;
+        text-align: center;
+        background: linear-gradient(135deg,#5b66d6,#8a92ff , #d1d4ff);;
+        margin: 40px 40px 0px 40px;
+        border-radius: 10px;
+        color: #fdfdfd;
+        .items{
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        } 
+        .items >*{
+            font-size: 40px;
+        }
+        .phone{
+            color:#3d4aa8;
+        }
+        .phone:hover{
+            color: #252c63 !important;
+        }
+        .gmail:hover{
+            color: rgb(71, 8, 8) !important;
+        }
+        .whatsapp:hover{
+            color: rgb(5, 44, 8) !important;
+        }
+        
+    
+        h1{
+            font-family: Audiowide;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+  "tablets": [
+    {
+      "id": "TAB-001",
+      "title": "iTab Pro 11",
+      "brand": "TechVision",
+      "description": "A powerful 11-inch tablet designed for productivity, entertainment, and creative work. It features a high-resolution display and long battery life.",
+      "images": [
+        "images/tab1.png",
+        "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0"
+      ],
+      "screen_size_inches": 11,
+      "resolution": "2388x1668",
+      "processor": "Octa-core 3.0 GHz",
+      "ram_gb": 8,
+      "storage_gb": 256,
+      "battery_life_hours": 12,
+      "connectivity": ["WiFi", "Bluetooth 5.2", "USB-C"],
+      "price": "799",
+      "in_stock": true,
+      "rating": 4.7
+    },
+    {
+      "id": "TAB-002",
+      "title": "GalaxyTab Air 10",
+      "brand": "NovaTech",
+      "description": "A lightweight tablet perfect for browsing, streaming, and everyday tasks. Its slim design and bright display make it ideal for travel.",
+      "images": [
+        "https://images.unsplash.com/photo-1561154464-82e9adf32764",
+        "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9"
+      ],
+      "screen_size_inches": 10.4,
+      "resolution": "2000x1200",
+      "processor": "Octa-core 2.4 GHz",
+      "ram_gb": 6,
+      "storage_gb": 128,
+      "battery_life_hours": 10,
+      "connectivity": ["WiFi", "Bluetooth 5.1", "USB-C"],
+      "price": "499",
+      "in_stock": true,
+      "rating": 4.5
+    },
+    {
+      "id": "TAB-003",
+      "title": "MediaTab Lite 8",
+      "brand": "SmartWave",
+      "description": "Compact 8-inch tablet designed for reading, streaming, and light gaming. Affordable and easy to carry anywhere.",
+      "images": [
+        "https://images.unsplash.com/photo-1542751110-97427bbecf20",
+        "https://images.unsplash.com/photo-1609081219090-a6d81d3085bf"
+      ],
+      "screen_size_inches": 8,
+      "resolution": "1280x800",
+      "processor": "Quad-core 2.0 GHz",
+      "ram_gb": 4,
+      "storage_gb": 64,
+      "battery_life_hours": 9,
+      "connectivity": ["WiFi", "Bluetooth 5.0", "Micro-USB"],
+      "price": "199",
+      "in_stock": true,
+      "rating": 4.2
+    },
+    {
+      "id": "TAB-004",
+      "title": "UltraPad X12",
+      "brand": "FutureTech",
+      "description": "High-performance 12.4-inch tablet with powerful processor and stylus support for designers and professionals.",
+      "images": [
+        "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9",
+        "https://images.unsplash.com/photo-1587614382346-acd977736f90"
+      ],
+      "screen_size_inches": 12.4,
+      "resolution": "2800x1752",
+      "processor": "Octa-core 3.2 GHz",
+      "ram_gb": 12,
+      "storage_gb": 512,
+      "battery_life_hours": 14,
+      "connectivity": ["WiFi", "Bluetooth 5.3", "USB-C"],
+      "price": "999",
+      "in_stock": true,
+      "rating": 4.8
+    },
+    {
+      "id": "TAB-005",
+      "title": "EduTab 9",
+      "brand": "LearnTech",
+      "description": "Affordable tablet designed for students and online learning with durable design and parental control features.",
+      "images": [
+        "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0",
+        "https://images.unsplash.com/photo-1561154464-82e9adf32764"
+      ],
+      "screen_size_inches": 9,
+      "resolution": "1920x1200",
+      "processor": "Quad-core 2.2 GHz",
+      "ram_gb": 4,
+      "storage_gb": 128,
+      "battery_life_hours": 11,
+      "connectivity": ["WiFi", "Bluetooth 5.0", "USB-C"],
+      "price": "299",
+      "in_stock": true,
+      "rating": 4.3
+    }
+  ]
+}
