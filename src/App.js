@@ -32,7 +32,7 @@ function App() {
     );
   }, [darkMode]);
 
-  
+  // eslint-disable-next-line
   useEffect(()=>{
     const loadData = async()=>{
         // if data is already existed skip fetching 
@@ -77,6 +77,7 @@ function App() {
       } 
       loadData()
     },[])
+    
    if(loading){
     return <h2 style={{textAlign:"center"}}>Loading Products...</h2>
   }

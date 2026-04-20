@@ -25,13 +25,6 @@ const Features = () => {
   const[showAll , setShowAll] = useState(false)
   
 
-  const fullList = [
-    ...products,
-    ...mobileData,
-    ...audioData,
-    ...tabletData,
-    ...storageData
-  ]
 
   const handleCart = (id ,image,title,price,quantity)=>{
     addToCart({
@@ -66,6 +59,14 @@ const Features = () => {
   
   const [query, setQuery] = useState("");
   const filteredProducts = useMemo(()=>{
+      const fullList = [
+    ...products,
+    ...mobileData,
+    ...audioData,
+    ...tabletData,
+    ...storageData
+  ]
+
     const q = query.trim().toLowerCase()
     if(!q) return fullList
     return fullList.filter(p=>{
@@ -74,7 +75,7 @@ const Features = () => {
       const descText = (p.description || "").toLowerCase()
       return title.includes(q) || brand.includes(q) || descText.includes(q)
     })
-  }, [fullList, query])
+  }, [products, mobileData, audioData, tabletData, storageData, query])
   
   const allProducts = showAll ? filteredProducts : filteredProducts.slice(0, 5)
   return (
