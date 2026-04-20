@@ -34,10 +34,6 @@ const NavbarCart = () => {
           <RouterLink to="/">Back Home</RouterLink>
         </div>
 
-        <div className={styles.buttons}>
-          <button>Buy Products</button>
-        </div>
-        
 
         <IoMenu className={styles.menuIcon} onClick={() => setOpen(!open)} />
       </nav>
