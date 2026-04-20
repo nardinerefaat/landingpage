@@ -13,7 +13,6 @@ const Cart = () => {
    return (
     <div id='featuredProducts' 
       className={`${styles.feature} 
-     
       ${styles.myCart}
       
       `}
