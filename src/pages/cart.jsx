@@ -19,7 +19,11 @@ const Cart = () => {
       style={{marginTop:"50px"}}>
       <NavbarCart/>
         {cart.length > 0 &&
-            <h3>Your Cart <em>;)</em></h3>
+        <>
+        <h2>Total Price: <em>{totalPrice.toFixed(2)} $</em></h2> 
+        <h3>Your Cart <em>;)</em></h3>
+        
+        </>
         }
       <div className={styles.container}>
       {cart.map((item) => (
@@ -47,7 +51,7 @@ const Cart = () => {
             <h3>Your Cart Is <em>Empty !!</em></h3>
         }
     
-    <h2>Total Price: <em>{totalPrice.toFixed(2)} $</em></h2> 
+   
     </div>
   )
 }
