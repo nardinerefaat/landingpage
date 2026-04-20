@@ -1,9 +1,10 @@
 .mainContainer{
     padding: 30px 1px;
 
-    
+    background-color: var(--bg);
     h1{
         padding: 10px  100px 0px 100px;
+        color: var(--text);
     }
     .container{
         padding: 10px 50px;

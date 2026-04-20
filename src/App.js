@@ -6,25 +6,48 @@ import Testimonials from './components/testimonials'
 import Footer from './components/footer'
 import ProductCategory from './components/productcategory'
 import { useState , useEffect } from 'react'
+import Cart from './pages/cart'
+import { useLocalStorage } from './hooks/useLocalStorage'
+import { BrowserRouter as Router, Routes , Route  } from 'react-router-dom'
+import { DataProvider } from './context/DataContext'
 
 
 function App() {
 
-  const[products,setProducts] = useState([])
-  const[mobileData , setMobileData] = useState([])
-  const[audioData , setAudioData] = useState([])
-  const[tabletData , setTabletData] = useState([])
-  const[storageData , setStorageData] = useState([])
+  const[products,setProducts] = useLocalStorage("products",[])
+  const[mobileData , setMobileData] = useLocalStorage( "mobileData",[])
+  const[audioData , setAudioData] = useLocalStorage("audioData",[])
+  const[tabletData , setTabletData] = useLocalStorage("tabletData",[])
+  const[storageData , setStorageData] = useLocalStorage("storageData",[])
   const [loading,setLoading] = useState(true)
   const[darkMode , setDarkMode]= useState(true)
 
   const handleDarkMode = ()=>{
-    setDarkMode(!darkMode)
+    setDarkMode(prev=>!prev)
   }
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      darkMode ? "dark" : "light"
+    );
+  }, [darkMode]);
+
   
   useEffect(()=>{
-      const loadData = async()=>{
-        try{
+    const loadData = async()=>{
+        // if data is already existed skip fetching 
+      try{
+        if(
+          products.length &&
+          mobileData.length &&
+          audioData.length &&
+          tabletData.length &&
+          storageData.length 
+        ){
+          setLoading(false)
+          return;
+        }
+        
           const laptopRes = await fetch('https://dummyjson.com/products/search?q=laptop')
           const laptopData = await laptopRes.json()
 
@@ -59,55 +82,52 @@ function App() {
   }
 
 
-  
-
-  return (
+  const MainPage = ()=>{
+    return(
     <div className="layout">
-      <Navbar 
-          darkMode = {darkMode}
-          handleDarkMode={handleDarkMode}
-      />
+
+    <Navbar/>
       <main className="content">
         <section id="home"><Home /></section>
         <section id="features">
-          <Features 
-            products = {products}
-            mobileData = {mobileData}
-            audioData = {audioData}
-            tabletData = {tabletData}
-            storageData = {storageData}
-            darkMode = {darkMode}
-            handleDarkMode={handleDarkMode}
-            />
-
+          <Features/>
         </section>
         <section id="productCategory">
-          <ProductCategory 
-            products = {products}
-            mobileData = {mobileData}
-            audioData = {audioData}
-            tabletData = {tabletData}
-            storageData = {storageData}
-            darkMode = {darkMode}
-            handleDarkMode={handleDarkMode}
-          />
+          <ProductCategory />
         </section>
         <section id="testimonials">
-            <Testimonials 
-              darkMode = {darkMode}
-              handleDarkMode={handleDarkMode}
-            
-            />
+            <Testimonials />
         </section>
         <section id="footer">
-            <Footer 
-              darkMode = {darkMode}
-              handleDarkMode={handleDarkMode}
-            />
-        
+            <Footer />
         </section>
       </main>
     </div>
+   
+  )
+  }
+
+  return (
+
+      <Router>
+        <DataProvider
+          value={{
+            products,
+            mobileData,
+            audioData,
+            tabletData,
+            storageData,
+            darkMode,
+            handleDarkMode
+          }}
+        >
+        <Routes>
+          <Route path='/' element={<MainPage />}/>
+          <Route path='/cart' element={<Cart/>}/>
+        </Routes>
+        </DataProvider>
+      </Router>
+      
   )
 }
 

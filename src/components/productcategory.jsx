@@ -2,7 +2,20 @@ import  {useState} from 'react'
 
 import styles from '../styles/features.module.scss'
 
-const ProductCategory = ({products ,mobileData , audioData,tabletData,storageData , darkMode , handleDarkMode}) => {
+import { useContext } from "react";
+import { DataContext } from "../context/DataContext";
+
+const ProductCategory = () => {
+   const {
+    products,
+    mobileData,
+    audioData,
+    tabletData,
+    storageData,
+    addToCart
+    
+  } = useContext(DataContext);
+  
   const [ category,setCategory] = useState("phone")
 
   const selectedCategory = 
@@ -23,23 +36,40 @@ const ProductCategory = ({products ,mobileData , audioData,tabletData,storageDat
   const itemDescription=(id)=>{
       setDesc(desc === id ? null : id)
     }
+  const [productAmount , setProductAmount] = useState({})
+  const handleProductAmount = (id,operation)=>{
+    setProductAmount(prev=>{
+      const current = prev[id]? prev[id] :1
+      let newValue = current
+      if(operation === "plus"){
+        newValue = current +1
+  
+      }
+      else if (operation === "minus") {
+      newValue = Math.max(1, current - 1); // prevent going below 1
+    }
+    return{
+      ...prev,[id]:newValue
+    }
+    
+    })
    
+  }
  
+  const handleCart = (id ,image,title,price,quantity)=>{
+    addToCart({
+      id,
+      image,
+      title,
+      price,
+      quantity: quantity || 1
+    })
+    alert(`${title} is added to cart !`)
+  }
   return (
-    <div 
-      className={`${styles.feature} 
-      ${darkMode?"darkMode" : ""}`}
-        
-    >
-
+    <div className={styles.feature}>
       <div className={styles.head}>
-        <h1>Shop By Category</h1>
-        
-        {/* <input
-            type="text"
-            placeholder="Search products..."
-            onChange={(e)=>setSearch(e.target.value)}
-        /> */}
+        <h1>Shop By Category</h1>     
       </div>
 
       
@@ -55,7 +85,7 @@ const ProductCategory = ({products ,mobileData , audioData,tabletData,storageDat
       <div className={styles.container}>
         {selectedCategory.map(item =>(
           <div key={item.id} 
-            className={`${styles.item} ${darkMode?styles.darkMode:styles.item}`}>
+            className={styles.item}>
             <img src={item.images[0]} alt={item.title}  />
             <h4>{item.title}</h4>
             <p>Brand: {item.brand}</p>
@@ -65,6 +95,15 @@ const ProductCategory = ({products ,mobileData , audioData,tabletData,storageDat
               desc=== item.id &&(
                 <p className={styles.description}>{item.description}</p>
               )}
+               <div className={styles.cart}>
+                <button onClick={()=>handleCart(item.id,item.images?.[0] , item.title,item.price,productAmount[item.id]||1)}>Add To Cart</button>  
+                <div className={styles.add}>
+                  <button onClick={()=>handleProductAmount(item.id,"plus")}>+</button>
+                  <p className={styles.value}>{productAmount[item.id]||1}</p>
+                  <button onClick={()=>handleProductAmount(item.id,"minus")}>-</button>
+                </div>
+
+              </div>
           </div>
         ))
 

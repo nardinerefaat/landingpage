@@ -1,7 +1,9 @@
 .feature{
-    padding: 100px  100px 0px 100px;
-    
-    .head{
+  padding: 100px  100px 0px 100px;
+  color: var(--text);
+  background: var(--bg);
+  transition: background-color 0.5s ease, color 0.5s ease;    
+  .head{
         display: flex;
         align-items: center;
         margin-bottom: 5px;    
@@ -14,13 +16,12 @@
             right: 0;
             border: none;
             border-radius: 10px;
-            background: linear-gradient(135deg,#5b66d6,#8a92ff);;
+            background: var(--accent);
             color: white;
             font-weight: bold;
-            
             padding: 10px 20px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.288);
-            transition: all 0.3s ease;
+            // transition: all 0.3s ease;
 
             &:hover{
               background-color: rgb(231, 231, 231);
@@ -41,24 +42,24 @@
         align-items: stretch;
         
         .item{
+          display: flex;
+          flex-direction: column;
+          color: var(--text);
+          box-shadow: 0 4px 12px var(--shadow);
           z-index: 1;
-          background-color: rgb(248, 248, 248);
+          background: var(--card);
           border-radius: 10px;
           width: calc(33.33% - 20px);
           padding: 0px 20px 20px 20px;
           position: relative;
           min-height: 280px; // taller when description opens
-          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-          transition: all .3s ease;
+          // transition: all 0.4s ease;
           animation: fadeIn 0.5s ease forwards;
           opacity: 0;
           overflow:hidden;
-          // transform: translateY(30px);
-          // animation: fadeIn 0.5s ease forwards;
           align-items: stretch;
           &:hover{
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            // transform:translateY(-10px);
             z-index: 20;
             transform: scale(1.01) !important;
             }
@@ -67,7 +68,7 @@
               }
             h4{
               // margin-bottom: 5px;
-              color: #2a3374;
+              color: var(--textCard);
               padding: 0;
             }
             button{
@@ -75,11 +76,11 @@
                 margin-top: 10px;
                 border: none;
                 border-radius: 10px;
-                background: linear-gradient(135deg,#3d4aa8,#6b75ff);
+                background: var(--accent);
                 color: white;
                 width: fit-content;
                 padding: 5px 20px ;
-                transition: all .5s ease;
+                transition: all 0.4s ease;
                 cursor: pointer;
                 &:hover{
                     background: linear-gradient(135deg,#5b66d6,#8a92ff);
@@ -89,12 +90,12 @@
                   
                 }
             .active{
-              background: linear-gradient(135deg,#5b66d6,#8a92ff);
-              color: #3d4aa8;
+              background: var(--accent);
+              color: var(--textCard);
               font-weight: bold;
             }
             span{
-              color: #3d4aa8;
+              color: var(--textCard);
               padding: 0;
               font-size:20px;
               font-weight:bold;
@@ -107,24 +108,52 @@
                 transition: all .5s ease;
               }
               p{
-                color: #3d4aa8;
+                color: var(--textCard);
               }
               .description{
-                color: #3d4aa8 ;
-                background-color: #fff;
+                background: var(--card);
+                color: var(--text);
+                transition: all 0.4s ease;
                 border-radius: 10px;
                 padding: 10px;
                 position: relative;
                 z-index: 100;
                 margin-top: 10px;
                 margin: 5px;
-                // overflow:visible;
                 animation:descFade .3s ease;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.527);
 
             }
         }
+        .cart{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: auto; 
+          
+          button{
+            height: fit-content ;
+             
+          }
+          .add{
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            
+            button {
+              padding: 5px 10px;
+              border-radius: 6px;
+              font-weight: bold;
+            }
         
+            p {
+              min-width: 20px;
+              text-align: center;
+              font-weight: bold;
+            }
+          }
+    
+        }
         .showAll{
           animation: fadeIn 0.6s ease forwards;
         }
@@ -135,8 +164,6 @@
         }
       }
       .container>div{
-        // display: flex;
-        // gap: 10px;
         flex-direction: column;
       }
 }
@@ -150,8 +177,8 @@
 .categoryBtn{
   border-radius:20px;
   padding:8px 18px;
-  background:#eee;
-  color: #3d4aa8;
+  background:var(--bg);
+  color: var(--text);
   margin-bottom: 10px;
   border:none;
   &:hover{
@@ -166,16 +193,6 @@
   font-weight: bold;
 }
 
-.darkMode{
-  background-color: #1b172d !important;
-  h4,p,span{
-    color: #eee !important;
-  }
-  .description{
-    background-color: #6b75ff !important;
-    color: white !important;
-  }
-}
 
 
 @keyframes fadeIn{
@@ -217,6 +234,16 @@
 
   .feature .container .item{
     width: calc(50% - 20px);
+    
+    button{
+      align-items: center;
+    }
+  
+    .cart{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .navbar{
@@ -240,7 +267,12 @@
   .feature .container .item{
     width: 100%;
     text-align: center;
-    // display: flex;
+    align-items: center;
+    .cart{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
     
   }
   .feature{
@@ -262,4 +294,29 @@
     font-size: 28px;
   }
 
+}
+
+.search{
+  padding: 10px 20px ;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #8a92ff;
+  &::placeholder{
+    color: rgba(255, 255, 255, 0.699);
+  }
+}
+
+.myCart{
+  button{
+    margin-right: 5px ;
+  }
+  padding-bottom: 100px;
+  h2{
+    margin: 40px 5px;
+  }
+  h3{
+    margin-bottom: 20px;
+  }
 }

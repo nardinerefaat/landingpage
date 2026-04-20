@@ -2,17 +2,12 @@ import { CiDeliveryTruck,CiBookmarkCheck  } from "react-icons/ci";
 import { GiCardPickup } from "react-icons/gi";
 import styles from '../styles/shoppingFeatures.module.scss'
 
-const Testimonials = ({darkMode , handleDarkMode}) => {
-  return (
+const Testimonials = () => {
+   return (
     <div
-        className={`
-          ${styles.mainContainer}
-          ${darkMode?"darkMode" : ""}`} 
-        >
+        className={styles.mainContainer}>
     <h1>Features</h1>
-    <div 
-      className={`${styles.container}`} 
-      >
+    <div className={styles.container}>
       <h3>Experience Streamlined Shopping With Crescendo</h3>
       <div className={styles.items}>
         <div>
