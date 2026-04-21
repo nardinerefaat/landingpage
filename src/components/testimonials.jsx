@@ -4,8 +4,7 @@ import styles from '../styles/shoppingFeatures.module.scss'
 
 const Testimonials = () => {
    return (
-    <div
-        className={styles.mainContainer}>
+    <div className={styles.mainContainer}>
     <h1>Features</h1>
     <div className={styles.container}>
       <h3>Experience Streamlined Shopping With Crescendo</h3>
