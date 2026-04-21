@@ -29,9 +29,7 @@ const Cart = () => {
       {cart.map((item) => (
         <div 
           key={item.id} 
-           className={`${styles.item} 
-             
-             
+           className={`${styles.item}        
               `
               
             }  

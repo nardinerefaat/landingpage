@@ -12,8 +12,6 @@ const NavbarCart = () => {
    const {handleDarkMode } = useContext(DataContext);
   const [open, setOpen] = useState(false)
 
-
-
   
   return (
     <>
@@ -38,12 +36,12 @@ const NavbarCart = () => {
         <IoMenu className={styles.menuIcon} onClick={() => setOpen(!open)} />
       </nav>
 
-      {open && (
-        <div className={styles.mobileMenu}>
+      
+        <div className={`${styles.mobileMenu} ${open ? styles.open : ""}`}>
           <RouterLink to="/" style={{textDecoration:"none"}} onClick={()=>{setOpen(false);}}>Back Home</RouterLink>
          
         </div>
-      )}
+      
     </>
   )
 }
