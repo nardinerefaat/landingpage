@@ -64,10 +64,10 @@ const Home = () => {
 
     <div className={styles.text}
       style={{color:headset[index].text}}
-    
     >
       <h1>High Quality Tech Gadgets And Accessories</h1>
       <button 
+        data-testid="browse-btn"
         style={{background:headset[index].text, color:"white"}}
         onClick={()=>{
           const section = document.getElementById('featuredProducts')

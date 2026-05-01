@@ -29,8 +29,8 @@ export const DataProvider = ({children , value})=>{
         })
      
     };
-    
 
+    
 
     
     const handleQuantity = (id , operation)=>{
@@ -55,9 +55,14 @@ export const DataProvider = ({children , value})=>{
         )
     };
 
+    // Calculate cart items count
+    const cartItemsCount = cart.reduce((count, item) => count + (item.quantity || 0), 0);
+    const clearCart = ()=>{
+        setCart([])
+    }
    
     return(
-        <DataContext.Provider value={{...value , cart , addToCart , handleQuantity}}>
+        <DataContext.Provider value={{...(value || {}) , cart , addToCart , handleQuantity , cartItemsCount ,clearCart}}>
             {children}
         </DataContext.Provider>
     )

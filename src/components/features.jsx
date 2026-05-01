@@ -34,7 +34,7 @@ const Features = () => {
       price,
       quantity: quantity || 1
     })
-     alert(`${title} is added to cart!`)
+    //  alert(`${title} is added to cart!`)
   }
   
   const [productAmount , setProductAmount] = useState({})
@@ -132,9 +132,9 @@ const Features = () => {
               </div>
           </div> 
 
-        ))
+        ))}
 
-        }
+        
         </div>
     </div>
   )

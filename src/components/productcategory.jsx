@@ -24,7 +24,6 @@ const ProductCategory = () => {
     category ==="audioandvisuals"? audioData:
     category ==="storage"? storageData:
     category ==="tablets"? tabletData:[]
-    
 
   const handleCategory = (categoryName)=>{
     setCategory(categoryName)
@@ -64,7 +63,7 @@ const ProductCategory = () => {
       price,
       quantity: quantity || 1
     })
-    alert(`${title} is added to cart !`)
+    // alert(`${title} is added to cart !`)
   }
   return (
     <div className={styles.feature}>
@@ -105,9 +104,9 @@ const ProductCategory = () => {
 
               </div>
           </div>
-        ))
+        ))}
 
-        }
+        
       </div>
 
 
@@ -115,10 +114,7 @@ const ProductCategory = () => {
   )
 }
 
-export default ProductCategory
-
-
-/*
+export default ProductCategory/*
 1- menu has the categories names
 2- while selecting name => show its product data
 3- add it to the shop all 

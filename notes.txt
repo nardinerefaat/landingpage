@@ -1,0 +1,16 @@
+
+
+## handleDarkMode E2E 
+
+
+
+## In Jest (Node environment):
+❌ localStorage does NOT exist by default
+so this line can break your app:
+❌ localStorage
+❌ window
+❌ document behavior like a real browser
+SO 
+    - fake scroll behavior
+    - fake router
+    - bring fake localStorage
