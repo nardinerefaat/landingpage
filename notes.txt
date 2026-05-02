@@ -14,3 +14,9 @@ SO
     - fake scroll behavior
     - fake router
     - bring fake localStorage
+
+
+- Smart Search (حتى لو logic بسيط متطور)
+- Product recommendations (rule-based كبداية)
+- Personalized UI based on user behavior
+- استخدام API جاهز فيه AI (زي تصنيف منتجات أو suggestions)

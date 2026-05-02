@@ -1,0 +1,136 @@
+RECOMMENDATION FIX PLAN (images missing + duplicates)
+====================================================
+
+Goal
+----
+Fix the “You may also like” section so:
+1) Recommended products ALWAYS have a valid image.
+2) Recommended products do NOT repeat.
+3) (Optional but recommended) Do not recommend items that are already in the cart.
+
+Why it happens in your code
+---------------------------
+1) Images missing:
+   - In `src/context/DataContext.js` your `normalize()` currently sets:
+       image: p.image || p.thumbnail || ""
+     But most of your products (DummyJSON + your local JSON) store images as `images[0]`.
+     So many items get `image: ""`, then recommendation cards render blank/broken images.
+
+2) Repeated recommendations:
+   - `allProducts` is a concatenation of multiple sources. Some sources may reuse IDs (or titles),
+     and your recommendation pipeline never deduplicates.
+   - Also, recommendations only exclude `currentProduct.id`; they don’t exclude items already in `cart`.
+
+
+CODE CHANGES YOU SHOULD APPLY
+=============================
+
+Change A — Fix normalization to always provide `image`
+------------------------------------------------------
+File: `src/context/DataContext.js`
+
+Replace your `normalize` function with this version:
+
+```js
+const normalize = (p) => ({
+  ...p,
+  image:
+    p.image ||
+    p.images?.[0] ||     // ✅ most of your items use images[0]
+    p.thumbnail ||
+    "",
+});
+```
+
+Notes:
+- Keep `...p` so you don’t lose fields used elsewhere.
+- This makes `allProducts` (and therefore recommendations) always have `image` when possible.
+
+
+Change B — Deduplicate recommendations + exclude cart items
+-----------------------------------------------------------
+File: `src/context/DataContext.js`
+
+Replace your `getRecommendations` function with this improved version:
+
+```js
+const getRecommendations = (currentProduct, products, cart = []) => {
+  const cartIds = new Set(cart.map((c) => c.id));
+  const seen = new Set(); // helps prevent duplicates in the output
+
+  return products
+    .filter((p) => {
+      if (!p) return false;
+      if (p.id === currentProduct.id) return false;     // don’t recommend the same product
+      if (!p.image) return false;                       // require a real image
+      if (cartIds.has(p.id)) return false;              // ✅ avoid recommending cart items
+      if (seen.has(p.id)) return false;                 // ✅ dedupe by id
+      seen.add(p.id);
+      return true;
+    })
+    .map((product) => {
+      let score = 0;
+
+      if (product.category === currentProduct.category) score += 3;
+      if (product.brand === currentProduct.brand) score += 2;
+
+      const currentTitle = (currentProduct.title || "").toLowerCase();
+      const commonWords = (product.title || "")
+        .toLowerCase()
+        .split(" ")
+        .filter((word) => word && currentTitle.includes(word));
+
+      score += commonWords.length;
+
+      return { ...product, score };
+    })
+    .filter((p) => p.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 4);
+};
+```
+
+Notes:
+- The new function accepts `cart` as a 3rd argument so it can exclude cart items.
+- We rely on `image` being normalized (Change A).
+- We dedupe by `id`. If your data has ID collisions across categories, consider deduping by
+  `(title + brand)` instead (advanced option).
+
+
+Change C — Pass cart into getRecommendations
+--------------------------------------------
+File: `src/pages/cart.jsx`
+
+Update the recommendations memo from:
+
+```js
+return getRecommendations(cart[0] , allProducts)
+```
+
+to:
+
+```js
+return getRecommendations(cart[0], allProducts, cart)
+```
+
+
+Extra (optional) — safer image rendering in cart recommendations UI
+-------------------------------------------------------------------
+File: `src/pages/cart.jsx`
+
+Your UI currently does:
+  item.image || item.thumbnail || placeholder
+
+After Change A, `item.image` should be enough, but you can keep a fallback:
+
+```js
+<img src={item.image || "https://via.placeholder.com/150"} alt={item.title} />
+```
+
+
+What you should see after these edits
+-------------------------------------
+- Recommendations show images consistently (because `image` uses `images[0]` as fallback).
+- Recommendations do not repeat.
+- Items already in your cart won’t appear in “You may also like”.
+

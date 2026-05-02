@@ -43,10 +43,8 @@ function App() {
           audioData.length &&
           tabletData.length &&
           storageData.length 
-        ){
-          setLoading(false)
-          return;
-        }
+        ){setLoading(false)
+          return;}
         
           const laptopRes = await fetch('https://dummyjson.com/products/search?q=laptop')
           const laptopData = await laptopRes.json()

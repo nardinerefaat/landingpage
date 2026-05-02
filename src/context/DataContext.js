@@ -1,9 +1,29 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 
 export const DataContext = createContext()
 
 export const DataProvider = ({children , value})=>{
     
+    const normalize = (p) => ({
+        id: p.id,
+        title: p.title,
+        price: p.price,
+        category: p.category,
+        brand: p.brand,
+        image:  p.image ||
+                p.images?.[0] ||    
+                p.thumbnail ||
+                "",
+      });
+const allProducts = useMemo(() => [
+  ...(value?.products || []),
+  ...(value?.mobileData || []),
+  ...(value?.audioData || []),
+  ...(value?.tabletData || []),
+  ...(value?.storageData || [])
+].map(normalize), [value]);
+    
+
     const [cart , setCart] = useState(()=>{
         const saved = localStorage.getItem("cart")
         return saved?JSON.parse(saved):[]
@@ -61,8 +81,43 @@ export const DataProvider = ({children , value})=>{
         setCart([])
     }
    
+   
+    const getRecommendations = (currentProduct, products, cart = []) => {
+    const cartIds = new Set(cart.map((c) => c.id));
+    const seen = new Set(); // helps prevent duplicates in the output
+
+    return products
+        .filter((p) => {
+        if (!p) return false;
+        if (p.id === currentProduct.id) return false;     // don’t recommend the same product
+        if (!p.image) return false;                       // require a real image
+        if (cartIds.has(p.id)) return false;              // avoid recommending cart items
+        if (seen.has(p.id)) return false;                 // dedupe by id
+        seen.add(p.id);
+        return true;
+        })
+        .map((product) => {
+        let score = 0;
+
+        if (product.category === currentProduct.category) score += 3;
+        if (product.brand === currentProduct.brand) score += 2;
+
+        const currentTitle = (currentProduct.title || "").toLowerCase();
+        const commonWords = (product.title || "")
+            .toLowerCase()
+            .split(" ")
+            .filter((word) => word && currentTitle.includes(word));
+
+        score += commonWords.length;
+
+        return { ...product, score };
+        })
+        .filter((p) => p.score > 0)
+        .sort((a, b) => b.score - a.score) // highest score on top
+        .slice(0, 4); // returns only 4 top items
+    };
     return(
-        <DataContext.Provider value={{...(value || {}) , cart , addToCart , handleQuantity , cartItemsCount ,clearCart}}>
+        <DataContext.Provider value={{...(value || {}), allProducts , cart , addToCart , handleQuantity , cartItemsCount ,clearCart , getRecommendations}}>
             {children}
         </DataContext.Provider>
     )

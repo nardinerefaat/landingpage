@@ -1,8 +1,4 @@
- 
-
-
-
-import { render, screen } from '@testing-library/react';
+ import { render, screen } from '@testing-library/react';
 import Home from './home';
 import userEvent from '@testing-library/user-event';
 import { DataContext } from '../context/DataContext'
